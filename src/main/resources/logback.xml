@@ -43,7 +43,7 @@
     netty initialization and event loop management appenders,
     not necessarily what is desired when debugging requests
     -->
-    <logger name="io.grpc.netty.shaded.io.grpc.netty" level="warn"/>
+    <logger name="io.grpc.netty.shaded.io.grpc.netty" level="info"/>
     <logger name="io.grpc.netty.shaded.io.netty" level="warn"/>
     <logger name="io.grpc.netty.shaded.io.netty.buffer" level="warn"/>
     <logger name="io.grpc.netty.shaded.io.netty.channel.DefaultChannelId" level="warn"/>

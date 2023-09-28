@@ -22,8 +22,15 @@ import com.google.cloud.storage.GrpcStorageOptions;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.TransportCompatibility.Transport;
+import org.slf4j.bridge.SLF4JBridgeHandler;
+
 
 public final class WriteBenchmark {
+    static {
+        SLF4JBridgeHandler.removeHandlersForRootLogger();
+        SLF4JBridgeHandler.install();
+      }
+
     private static StorageOptions buildStorageOptions(Transport transport) throws IOException {
         if (transport == Transport.HTTP) {
             return StorageOptions.http().build();

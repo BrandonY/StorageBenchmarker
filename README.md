@@ -14,11 +14,13 @@ This is a small utility for measuring the time to write Google Cloud Storage obj
 3. Copy the program to the machine you want to test with. Ensure that Default Application Credentials are appropriately configured for that environment.
 4. Run tests for APIs:
 
+    ```
     # Tests upload performance using the JSON API.
     java -jar target/storage-write-benchmarker-1.0-SNAPSHOT-shade.jar localFileName.bin gs://bucketname/destFile.bin
 
     # Tests upload performance using the gRPC API.
     java -jar target/storage-write-benchmarker-1.0-SNAPSHOT-shade.jar -grpc localFileName.bin gs://bucketname/destFile.bin
+    ```
 
 Program options:
 
