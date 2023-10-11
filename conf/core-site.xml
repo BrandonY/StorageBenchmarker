@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+  <!-- Uncomment the below section to enable gRPC Directpath -->
+  <!-- <property>
+    <name>fs.gs.grpc.enable</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>fs.gs.client.type</name>
+    <value>STORAGE_CLIENT</value>
+  </property>
+  <property>
+    <name>fs.gs.grpc.trafficdirector.enable</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>fs.gs.grpc.directpath.enable</name>
+    <value>true</value>
+  </property> -->
+
+
+  <property>
+    <name>fs.defaultFS</name>
+    <value>Put a bucket name name like gs://something here!</value>
+  </property>
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>target/build/test</value>
+    <description>A base for other temporary directories.</description>
+    <final>true</final>
+  </property>
+  <!-- Turn security off for tests by default -->
+  <property>
+    <name>hadoop.security.authentication</name>
+    <value>simple</value>
+  </property>
+  <property>
+    <name>fs.gs.impl</name>
+    <value>com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem</value>
+  </property>
+  <property>
+    <name>fs.AbstractFileSystem.gs.impl</name>
+    <value>com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS</value>
+  </property>
+
+  <!-- You can use application default credentials, or you can set keys:
+\     fs.gs.auth.type
+      fs.gs.auth.service.account.json.keyfile
+      fs.gs.project.id
+    -->
+</configuration>

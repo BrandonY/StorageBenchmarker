@@ -30,6 +30,22 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs</artifactId>
+            <version>3.3.6</version>
+        </dependency>
+         <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>3.3.6</version>
+        </dependency> 
+        <dependency>
+            <groupId>com.google.cloud.bigdataoss</groupId>
+            <artifactId>gcs-connector</artifactId>
+            <version>hadoop3-2.2.17</version>
+        </dependency>
+        
+        <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-storage</artifactId>
         </dependency>
@@ -73,7 +89,8 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>com.google.cloud.test.WriteBenchmark</mainClass>
+                   <!-- <mainClass>com.google.cloud.test.WriteBenchmark</mainClass> -->
+                   <mainClass>com.google.cloud.test.HdfsWriteBenchmark</mainClass>
                 </configuration>
                 <executions>
                     <execution>
@@ -112,7 +129,8 @@
                                 </goals>
                                 <phase>package</phase>
                                 <configuration>
-                                    <mainClass>com.google.cloud.test.WriteBenchmark</mainClass>
+                                    <!-- <mainClass>com.google.cloud.test.WriteBenchmark</mainClass> -->
+                                    <mainClass>com.google.cloud.test.HdfsWriteBenchmark</mainClass>
                                 </configuration>
                             </execution>
                         </executions>
@@ -145,7 +163,8 @@
                                     <transformers>
                                         <transformer
                                             implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                            <mainClass>com.google.cloud.test.WriteBenchmark</mainClass>
+                                            <!-- <mainClass>com.google.cloud.test.WriteBenchmark</mainClass> -->
+                                            <mainClass>com.google.cloud.test.HdfsWriteBenchmark</mainClass>
                                         </transformer>
                                         <transformer
                                             implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
